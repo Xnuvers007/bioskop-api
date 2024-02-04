@@ -78,7 +78,7 @@ def scrape_bioskop(base_url, search_term, pages=1):
         full_url = f"{base_url}page/{page}/{complete}"
         try:
             r = requests.get(full_url, headers={
-                             'User-Agent': 'Mozilla/5.0'}, timeout=10)
+                             'User-Agent': 'Mozilla/5.0'})
 
             if r.status_code == 200:
                 soup = BeautifulSoup(r.text, 'html.parser')
